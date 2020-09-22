@@ -6,11 +6,14 @@
     <string name="cancel">Annuler</string>
     <string name="cancel_all">Annuler tout</string>
     <string name="mot_de_passe">Mot de passe...</string>
-    <string name="entree">Saisir l\'entrée</string>
+    <string name="entree">Saisir l\'entrée...</string>
     <string name="principal">Saisir le plat principal...</string>
     <string name="fruit">Fruit</string>
     <string name="fromage">Fromage</string>
     <string name="soir">Soir</string>
     <string name="midi">Midi</string>
     <string name="valider">Valider</string>
+    <string name="aliment_supplementaire">Aliment(s) supplémentaire(s) :</string>
+    <string name="moment_de_la_journee">Moment de la journée :</string>
+    <string name="plats_consommes">Plats consommés :</string>
 </resources>
