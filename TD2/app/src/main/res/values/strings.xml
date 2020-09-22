@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">TD2</string>
     <string name="hello_world">Salut tout le monde !</string>
+    <string name="toto">Toto</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Annuler</string>
+    <string name="cancel_all">Annuler tout</string>
+    <string name="mot_de_passe">Mot de passe...</string>
 </resources>
