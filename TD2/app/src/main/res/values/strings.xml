@@ -16,4 +16,5 @@
     <string name="aliment_supplementaire">Aliment(s) supplémentaire(s) :</string>
     <string name="moment_de_la_journee">Moment de la journée :</string>
     <string name="plats_consommes">Plats consommés :</string>
+    <string name="Select_temp">Saisissez une température en degré Celsius</string>
 </resources>
