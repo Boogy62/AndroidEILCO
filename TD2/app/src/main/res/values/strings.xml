@@ -17,4 +17,14 @@
     <string name="moment_de_la_journee">Moment de la journée :</string>
     <string name="plats_consommes">Plats consommés :</string>
     <string name="Select_temp">Saisissez une température en degré Celsius</string>
+    <string name="saisir_heure">Saisissez l\'heure du relevé :</string>
+    <string name="saisir_date">Saisissez la date du relevé :</string>
+    <string name="saisir_vitesse_vent">Saisissez la vitesse du vent (km/h) :</string>
+    <string name="saisir_temperature">Saisissez la température (°C) :</string>
+    <string name="saisir_meteo">Saisissez la météo du jour :</string>
+        <string-array name="meteo">
+            <item>Dégagé</item>
+            <item>Couvert</item>
+            <item>Pluvieux</item>
+        </string-array>
 </resources>
