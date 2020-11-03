@@ -1,62 +1,37 @@
 package com.example.td6;
 
-import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
-import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main);
 
-        GithubService githubService = new Retrofit.Builder()
-                .baseUrl(GithubService.ENDPOINT)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-                .create(GithubService.class);
-/*
-        githubService.listRepos("adrienbusin").enqueue(new Callback<List<Repo>>() {
+        Button valider=(Button)findViewById(R.id.valider);
+        valider.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onResponse(Call<List<Repo>> call, Response<List<Repo>> response) {
-                afficherRepos(response.body());
-            }
-
-            @Override
-            public void onFailure(Call<List<Repo>> call, Throwable t) {
-
-            }
-        });*/
-
-        githubService.searchRepos("glide").enqueue(new Callback<List<Repo>>() {
-            @Override
-            public void onResponse(Call<List<Repo>> call, Response<List<Repo>> response) {
-                afficherListeRepos(response.body());
-            }
-
-            @Override
-            public void onFailure(Call<List<Repo>> call, Throwable t) {
-                System.out.println("erreur");
+            public void onClick(View v) {
+                EditText query=(EditText)findViewById(R.id.query);
+                Intent intent = new Intent(MainActivity.this, SearchRepos.class);
+                intent.putExtra("recherche",query.getText().toString());
+                startActivity(intent);
             }
         });
-    }
 
-    public void afficherRepos(List<Repo> repos) {
-        Toast.makeText(this,"nombre de dépots : "+repos.size(), Toast.LENGTH_SHORT).show();
-    }
-    public void afficherListeRepos(List<Repo> repos) {
-        Toast.makeText(this,"nombre de dépots : "+repos.size(), Toast.LENGTH_SHORT).show();
+
+
     }
 
 }
