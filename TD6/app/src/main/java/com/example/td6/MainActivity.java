@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(GithubService.class);
-
+/*
         githubService.listRepos("adrienbusin").enqueue(new Callback<List<Repo>>() {
             @Override
             public void onResponse(Call<List<Repo>> call, Response<List<Repo>> response) {
@@ -37,10 +37,25 @@ public class MainActivity extends AppCompatActivity {
             public void onFailure(Call<List<Repo>> call, Throwable t) {
 
             }
+        });*/
+
+        githubService.searchRepos("glide").enqueue(new Callback<List<Repo>>() {
+            @Override
+            public void onResponse(Call<List<Repo>> call, Response<List<Repo>> response) {
+                afficherListeRepos(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<List<Repo>> call, Throwable t) {
+                System.out.println("erreur");
+            }
         });
     }
 
     public void afficherRepos(List<Repo> repos) {
+        Toast.makeText(this,"nombre de dépots : "+repos.size(), Toast.LENGTH_SHORT).show();
+    }
+    public void afficherListeRepos(List<Repo> repos) {
         Toast.makeText(this,"nombre de dépots : "+repos.size(), Toast.LENGTH_SHORT).show();
     }
 
